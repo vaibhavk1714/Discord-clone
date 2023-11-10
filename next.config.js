@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    "trailingSlash": false
+    "trailingSlash": false,
+    images: {
+        domains: [
+            "utfs.io"
+        ]
+    }
 }
 
 module.exports = nextConfig
