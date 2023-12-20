@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { SocketProvider } from "@/components/providers/socket-provider";
 
 import { cn } from "@/lib/utils";
 
@@ -30,8 +31,10 @@ function RootLayout({ children }: { children: React.ReactNode }) {
 						enableSystem={false}
 						storageKey="discord-theme"
 					>
-						<ModalProvider />
-						{children}
+						<SocketProvider>
+							<ModalProvider />
+							{children}
+						</SocketProvider>
 					</ThemeProvider>
 				</body>
 			</html>
